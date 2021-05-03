@@ -1,25 +1,87 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+  
+// class App extends Component {
+//   constructor(props){
+//     super(props)
+      
+  
+//     this.state = {color : ' red!'}
+      
+    
+//     this.handleClick = this.handleClick.bind(this)
+//   }
+  
+//   handleClick(){
+    
+   
+//     this.setState({color : ' yellow!'})
+//   }
+    
+//   render(){
+//     return (
+//       <div>
+//         <h2> The name of fruit is Apple</h2>
+          
+// <p>The color is {this.state.color}</p>
+  
+//         <button onClick={this.handleClick}>
+//           Color change
+//         </button>
+//       </div>
+//     )
+//   }
+// }
+  
+// export default App
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+// import './App.css';
+// import Developer from './Developer';
+
+// function App()
+// {
+//     return(
+//         <div className="App">
+//             <h1>Props in React</h1>
+//             <Developer />
+//         </div>
+//     );
+// }
+// export default App
+
+
+
+
+class App extends Component{
+
+  state = {
+     isActive:false
+  }
+
+  handleShow = ()=>{
+      this.setState({
+          isActive: true
+      })
+  }
+
+  handleHide = () =>{
+      this.setState({
+          isActive: false
+      })
+  }
+
+   render(){
+       return(
+           <div>
+             <h1>This is Content</h1>
+           {this.state.isActive ? <h2>Hello </h2> : null }
+             <button onClick={this.handleShow}>Show Message  </button>
+            
+             <button onClick={this.handleHide}>Hide Message</button>
+           </div>
+       )
+   }
 }
 
 export default App;
